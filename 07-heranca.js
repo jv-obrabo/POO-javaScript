@@ -14,5 +14,21 @@
     super(nome, idade, altura, peso);
     this.curso = curso;
   }
-  
+
+ }
+// classe funcionario  que herda de pessoa
+ class  funcionario extends Pessoa {
+  constructor(nome, idade, altura, peso,  salario) {
+    super(nome, idade, altura, peso);
+    this.salario = salario;
+  }
+
+ }
+// classe funcionario  que herda de pessoa
+ class  funcionario extends  funcionario {
+  constructor(nome, idade, altura, peso,  salario) {
+    super(nome, idade, altura, peso);
+
+  }
+
  }
