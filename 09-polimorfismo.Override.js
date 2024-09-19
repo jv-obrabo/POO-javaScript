@@ -13,3 +13,14 @@ class Personagem {
      
 }
 }
+
+class Guego extends Personagem{
+    constructor(nome, vida, arma){
+        super(nome, vida);{
+        this.arma= arma;
+    }
+
+    console.log(`${this.nome} atacar ${this.arma}`);
+}
+
+}
