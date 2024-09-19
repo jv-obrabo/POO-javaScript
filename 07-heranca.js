@@ -25,10 +25,16 @@
 
  }
 // classe funcionario  que herda de pessoa
- class  funcionario extends  funcionario {
+ class  diretor extends  funcionario {
   constructor(nome, idade, altura, peso,  salario) {
-    super(nome, idade, altura, peso);
+    super(nome, idade, altura, peso,salario);
 
   }
 
  }
+ // classe funcionario  que herda de pessoa
+ class  professor extends  funcionario {
+  constructor(nome, idade, altura, peso,  salario) {
+    super(nome, idade, altura, peso,salario);
+  }
+}
