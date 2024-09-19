@@ -16,11 +16,20 @@ class Personagem {
 
 class Guego extends Personagem{
     constructor(nome, vida, arma){
-        super(nome, vida);{
+        super(nome, vida);
         this.arma= arma;
     }
-
+ AbstractRange(){
     console.log(`${this.nome} atacar ${this.arma}`);
 }
 
 }
+
+class Mago extends Personag{
+    constructor(nome, vida, fetiço){
+        super(nome, vida);
+        this.fetiço= fetico;
+    }atacar(){
+      console.log(`${this.nome} atacar ${this.feitico}!`);
+}
+      }
