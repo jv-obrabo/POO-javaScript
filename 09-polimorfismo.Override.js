@@ -33,3 +33,11 @@ class Mago extends Personag{
       console.log(`${this.nome} atacar ${this.feitico}!`);
 }
       }
+      class Arqueiro extends Personagem{
+    constructor(nome, vida, tipoflash){
+        super(nome, vida);
+        this.tipoflash= tipoflash;
+    }atacar(){
+        console.log(`${this.nome} dispara flechas ${this.tipoflash}`);
+} 
+}
