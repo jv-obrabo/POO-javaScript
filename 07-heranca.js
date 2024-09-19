@@ -46,3 +46,4 @@ const professor = new Professor ("wanderson",40,1.65,70,1000);
 console.log(aluno);
 console.log(diretor)
  console.log(professor)
+
