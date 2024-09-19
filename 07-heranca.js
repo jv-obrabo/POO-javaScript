@@ -38,3 +38,11 @@
     super(nome, idade, altura, peso,salario);
   }
 }
+//criando objetos aluno,  diretor e professor 
+const aluno = new Estudante("Joao",16,1.70,70, "progamaçao de jogos digitais");
+const diretor = new Diretor("sergio",45,1.65,3000);
+const professor = new Professor ("wanderson",40,1.65,70,1000);
+
+console.log(aluno);
+console.log(diretor)
+ console.log(professor)
