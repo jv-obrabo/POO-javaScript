@@ -70,3 +70,18 @@ class Assasino  extends Personagem {
         console.log(`${this.nome} usa sua Furtividade de nivel ${this.furtividade}para se esconder!`);
     } 
 }
+
+class Paladino  extends Personagem {
+  constructor(nome, nivel, vida, mana, fe) {
+    super(nome, "paladino", nivel, vida, mana);
+    this.fe = fe;
+  }
+  defesa() {
+    console.log( `${this.nome} se defendeu com o escudo sagrado, absorvendo mais dano com base na de (${this.fe}) !`);
+  }
+  curar() {
+    console.log(
+      `${this.nome} usa sua fe para curar a si mesmo ou aliados !`
+    );
+  }
+}
