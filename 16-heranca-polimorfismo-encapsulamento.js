@@ -57,3 +57,16 @@ receberDano(dano) {
     console.log(`${this.nome} recebeu ${dano} de dano. Vida restante: ${this.#vida} `);
 }
 }
+
+class Assasino  extends Personagem {
+    constructor(nome, nivel, vida, mana,furtividade) {
+        super(nome, 'Assassino', nivel, vida, mana);
+        this.furtividade = furtividade;
+    }
+    atacar() {
+        console.log(`${this.nome} atacar silenciosamente com dano adicional pela furtividade!`);
+    }
+    usarFurtividade() {
+        console.log(`${this.nome} usa sua Furtividade de nivel ${this.furtividade}para se esconder!`);
+    } 
+}
