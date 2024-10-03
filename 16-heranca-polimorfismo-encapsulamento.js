@@ -117,3 +117,19 @@ const mecanico = new Mecanico("Roberto das Engrenagens", 15, 150, 40, 10);
 
 mecanico.receberDano(30);
 mecanico.contruirTorre();
+
+console.log("-------------------")
+console.log("Modificando objetos");
+console.log("-------------------");
+
+assassino.nome = "Raven";
+console.log(`nome modificado: ${assassino.nome}`)
+assassino.atacar();
+
+paladiino.vida=150;
+console.log(`vida modificada: ${paladiino.vida}`)
+paladino.defesa();
+
+mecanico.mana=60;
+console.log(`mana modificada: ${mecanico.mana}`)
+mecanico.receberDano(50);
