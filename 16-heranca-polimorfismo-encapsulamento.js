@@ -103,3 +103,17 @@ class Mecanico extends Personagem {
     console.log(`${this.nome} construiu uma torre defensiva!`);
   }
 }
+const assassino =new Assasino("luna sombria",10,100,50,8);
+
+assassino.atacar();
+assassino.usarFurtividade();
+
+const paladino = new Paladino("Sir lancelot", 12, 120, 70, 15);
+
+paladino.defesa();
+paladino.curar();
+
+const mecanico = new Mecanico("Roberto das Engrenagens", 15, 150, 40, 10);
+
+mecanico.receberDano(30);
+mecanico.contruirTorre();
