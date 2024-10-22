@@ -18,3 +18,19 @@ class Personagem {
     );
   }
 }
+
+class Guerreiro extends Personagem {
+    constructor(nome,arma) {
+        super(nome);
+        this.forca = forca;
+        this.arma = arma;
+    }
+    
+    atacar() {
+        console.log(`${this.nome} ataca com ${this.arma}`);
+    }
+    
+    defender() {
+        console.log(`${this.nome} defende-se com força`);
+    }
+}
