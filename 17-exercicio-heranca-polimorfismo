@@ -1,0 +1,406 @@
+// Classe Base mitologia
+class Mitologia {
+  #nome;
+  #vida;
+  #forca;
+  #agilidade;
+  #peso;
+  #poder;
+  #altura;
+  #origem;
+  #genero;
+  #arma;
+
+  constructor(
+    nome,
+    vida,
+    forca,
+    agilidade,
+    peso,
+    poder,
+    altura,
+    origem,
+    genero,
+    arma
+  ) {
+    this.#nome = nome;
+    this.#vida = vida;
+    this.#forca = forca;
+    this.#agilidade = agilidade;
+    this.#peso = peso;
+    this.#poder = poder;
+    this.#altura = altura;
+    this.#origem = origem;
+    this.#genero = genero;
+    this.#arma = arma;
+  }
+
+  get nome() {
+    return this.#nome;
+  }
+  set nome(nome) {
+    this.#nome = nome;
+  }
+  // Métodos Getter e Setter para os outros atributos
+  // (Mesmos métodos para vida, forca, agilidade, peso, poder, altura, origem, genero, arma)
+
+  atacar(...args) {
+    if (args.length === 0) {
+      console.log(`${this.nome} realiza um ataque normal!`);
+    } else if (args.length === 1) {
+      console.log(`${this.nome} atacou com um poder de ${args[0]}!`);
+    } else if (args.length === 2) {
+      console.log(
+        `${this.nome} usou ${args[1]} e atacou com ${args[0]} de poder!`
+      );
+    } else {
+      console.log("Número inválido de argumentos.");
+    }
+  }
+
+  defesa() {
+    console.log(
+      `${this.nome} se defendeu com ${this.#forca * 2} pontos de defesa!`
+    );
+  }
+
+  receberDano(dano) {
+    this.#vida -= dano;
+    console.log(
+      `${this.nome} recebeu ${dano} de dano. Vida restante: ${this.#vida}`
+    );
+  }
+}
+
+// Classe derivada - Zeus
+class Thor extends Mitologia {
+  #raio;
+  #trovao;
+  constructor(
+    nome,
+    vida,
+    forca,
+    agilidade,
+    peso,
+    poder,
+    altura,
+    origem,
+    genero,
+    arma,
+    raio,
+    trovao
+  ) {
+    super(
+      nome,
+      vida,
+      forca,
+      agilidade,
+      peso,
+      poder,
+      altura,
+      origem,
+      genero,
+      arma
+    );
+    this.#raio = raio;
+    this.#trovao = trovao;
+  }
+
+  get raio() {
+    return this.#raio;
+  }
+  set raio(raio) {
+    this.#raio = raio;
+  }
+
+  get trovao() {
+    return this.#trovao;
+  }
+  set trovao(trovao) {
+    this.#trovao = trovao;
+  }
+
+  atacar() {
+    console.log(`${this.nome} ataca silenciosamente`);
+  }
+
+  criarUmaTempestade() {
+    console.log(`${this.nome} cria uma tempestade com ${this.#trovao}!`);
+  }
+}
+
+// Classe derivada - Poseidon
+class Polifemo extends Mitologia {
+  #agua;
+  #tsunami;
+  #cura;
+  constructor(
+    nome,
+    vida,
+    forca,
+    agilidade,
+    peso,
+    poder,
+    altura,
+    origem,
+    genero,
+    arma,
+    agua,
+    tsunami
+  ) {
+    super(
+      nome,
+      vida,
+      forca,
+      agilidade,
+      peso,
+      poder,
+      altura,
+      origem,
+      genero,
+      arma
+    );
+    this.#agua = agua;
+    this.#tsunami = tsunami;
+    this.#cura = 0; // A variável `cura` inicializada
+  }
+
+  get agua() {
+    return this.#agua;
+  }
+  set agua(agua) {
+    this.#agua = agua;
+  }
+
+  get cura() {
+    return this.#cura;
+  }
+  set cura(cura) {
+    this.#cura = cura;
+  }
+
+  defesa() {
+    console.log(
+      `${this.nome} se defendeu com cura através da água de categoria (${
+        this.#cura
+      })`
+    );
+  }
+
+  criarUmaCatastrofe() {
+    console.log(`${this.nome} cria uma armadilha com ${this.#agua}!`);
+  }
+}
+
+// Classe derivada - Ares
+class Eros extends Mitologia {
+  #guerra;
+  #bruto;
+  constructor(
+    nome,
+    vida,
+    forca,
+    agilidade,
+    peso,
+    poder,
+    altura,
+    origem,
+    genero,
+    arma,
+    guerra,
+    bruto
+  ) {
+    super(
+      nome,
+      vida,
+      forca,
+      agilidade,
+      peso,
+      poder,
+      altura,
+      origem,
+      genero,
+      arma
+    );
+    this.#guerra = guerra;
+    this.#bruto = bruto;
+  }
+
+  get guerra() {
+    return this.#guerra;
+  }
+  set guerra(guerra) {
+    this.#guerra = guerra;
+  }
+
+  get bruto() {
+    return this.#bruto;
+  }
+  set bruto(bruto) {
+    this.#bruto = bruto;
+  }
+
+  receberDano(dano) {
+    const danoReduzido = dano - this.guerra;
+    super.receberDano(danoReduzido);
+    console.log(
+      `${this.nome} usou sua brutalidade para reduzir o dano em ${this.guerra}.`
+    );
+  }
+
+  criarUmaGuerra() {
+    console.log(`${this.nome} cria uma guerra através da brutalidade!`);
+  }
+}
+
+// Classe derivada - Afrodite
+class Anteros extends Mitologia {
+  #pocaoAmor;
+  #beleza;
+  constructor(
+    nome,
+    vida,
+    forca,
+    agilidade,
+    peso,
+    poder,
+    altura,
+    origem,
+    genero,
+    arma,
+    pocaoAmor,
+    beleza
+  ) {
+    super(
+      nome,
+      vida,
+      forca,
+      agilidade,
+      peso,
+      poder,
+      altura,
+      origem,
+      genero,
+      arma
+    );
+    this.#pocaoAmor = pocaoAmor;
+    this.#beleza = beleza;
+  }
+
+  get pocaoAmor() {
+    return this.#pocaoAmor;
+  }
+  set pocaoAmor(pocaoAmor) {
+    this.#pocaoAmor = pocaoAmor;
+  }
+
+  get beleza() {
+    return this.#beleza;
+  }
+  set beleza(beleza) {
+    this.#beleza = beleza;
+  }
+
+  receberDano(dano) {
+    const danoReduzido = dano - this.#beleza; // Supondo que beleza reduz o dano
+    super.receberDano(danoReduzido);
+    console.log(
+      `${this.nome} usou seu poder de beleza para reduzir o dano em ${
+        this.#beleza
+      }.`
+    );
+  }
+
+  soltaPocaoDoAmor() {
+    console.log(`${this.nome} revela sua poção do amor!`);
+  }
+}
+
+// Criando instâncias e chamando métodos
+const thor = new Thor(
+  "Thor",
+  149,
+  100,
+  5050,
+  869,
+  160,
+  1.95,
+  "nórdica",
+  "m",
+  "ceu",
+  150,
+  120
+);
+thor.atacar();
+thor.criarUmaTempestade();
+
+const polifemo = new Polifemo(
+  "Polifemo",
+  1402,
+  9502,
+  500,
+  892,
+  1030,
+  1.95,
+  "Grego",
+  "M",
+  "Tritão",
+  1030,
+  3
+);
+polifemo.defesa();
+polifemo.criarUmaCatastrofe();
+
+const eros = new Eros(
+  "Eros",
+  1404,
+  9403,
+  4763,
+  89,
+  100,
+  1.95,
+  "Grego",
+  "M",
+  "Força",
+  125,
+  100
+);
+eros.receberDano(30);
+eros.criarUmaGuerra();
+
+const anteros = new Anteros(
+  "Anteros",
+  140,
+  900,
+  350,
+  70,
+  "super flecha",
+  1.75,
+  "Grega",
+  "F",
+  "Sensualidade",
+  135,
+  1000
+);
+anteros.receberDano(30);
+anteros.soltaPocaoDoAmor();
+
+console.log(".............................................");
+console.log("Modificando os objetos usando setters:");
+console.log("..................................................");
+
+thor.nome = "Thor";
+console.log(`Nome modificado: ${thor.nome}`);
+thor.atacar();
+
+polifemo.nome = "Polifemo";
+console.log(`Nome modificado: ${polifemo.nome}`);
+polifemo.defesa();
+
+eros.nome = "Eros";
+console.log(`Nome modificado: ${eros.nome}`);
+eros.receberDano(50);
+
+anteros.nome = "Anteros";
+console.log(`Nome modificada: ${anteros.nome}`);
+anteros.receberDano(50);
