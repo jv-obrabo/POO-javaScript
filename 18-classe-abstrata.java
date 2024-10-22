@@ -27,3 +27,22 @@ abstract class Personagem {
         System.out.println(this.nome + " levanta o escudo para se defender!");
     }
   }
+
+  class Mago extends Personagem {
+    private String magia;
+    
+    public Mago(String nome, String magia) {
+        super(nome);
+        this.magia = magia;
+    }
+    
+    @Override
+    public void atacar() {
+        System.out.println(this.nome + " lança a magia" + magia + "!");
+    }
+    
+    @Override
+    public void defender() {
+        System.out.println(this.nome + " usa um escudo magico para se defender!");
+    }
+  }
