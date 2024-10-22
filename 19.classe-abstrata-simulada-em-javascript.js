@@ -34,3 +34,30 @@ class Guerreiro extends Personagem {
         console.log(`${this.nome} defende-se com força`);
     }
 }
+
+class Mago extends  Personagem {
+    constructor(nome, magia) {
+        super(nome);
+        this.magia = magia;
+    }
+    atacar (){
+        console.log(`${this.nome}  lançar magia  ${this.magia}!`);
+    }
+    defender() {
+        console.log(`${this.nome} usa um escudo magico para se defender!`);
+    }
+}
+
+try {
+  const guerreiro = new Personagem("invalido");
+} catch (error) {
+  console.log(error.message);
+}
+
+const guerreiro = new Guerreiro("thorin", "espada");
+guerreiro.atacar();
+guerreiro.defender();
+
+const mago = new Mago("Gandalf", "bola de fogo");
+mago.atacar();
+mago.defender();
