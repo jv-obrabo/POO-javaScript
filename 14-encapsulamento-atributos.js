@@ -12,5 +12,6 @@ construtor(nome,classe,nivel,vida,mana) {
     this.nivel = nivel;
     this.vida = vida;
     this.mana = mana;
+    
 }
 }
