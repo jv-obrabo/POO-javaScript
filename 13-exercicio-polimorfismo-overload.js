@@ -22,7 +22,7 @@ class Animais {
     this.habitat = habitat;
     this.cor = cor;
   }
-
+ 
   correr(...args) {
     if (args.length === 0) {
       console.log(`${this.nome} REALIZA UMA Corrida!`);
@@ -42,7 +42,7 @@ class Animais {
   }
         
             
-  }
+  
 
   brigaDeAnimal() {
     console.log(`${this.nome} briga.`);
@@ -53,4 +53,5 @@ class Animais {
   dormir () {
     console.log(`${this.nome} dormir.`);
   }
+
 }
