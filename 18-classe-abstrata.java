@@ -46,3 +46,16 @@ abstract class Personagem {
         System.out.println(this.nome + " usa um escudo magico para se defender!");
     }
   }
+  
+  public class Main {
+    public static void main(String[] args) {
+        
+        Personagem guerreiro = new Guerreiro("Thorin", "espada");
+        guerreiro.atacar();
+        guerreiro.defender();
+        
+        Personagem mago = new Mago("Loki", "Bola de fogo");
+        mago.atacar();
+        mago.defender();
+    }
+  } 
